@@ -1,0 +1,7 @@
+# flyctl launch added from .gitignore
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+node_modules
+assets
+database
+fly.toml
