@@ -71,7 +71,7 @@ RUN . /home/node/python/venv/bin/activate && \
 
 
 # Copy and install n8n custom node
-COPY n8n-nodes-n8nergonode-0.1.0.tgz /home/node/
+# COPY n8n-custom-0.1.0.tgz /home/node/
 
 # Install n8n custom node
 # RUN \ 
