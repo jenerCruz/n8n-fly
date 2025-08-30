@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Reporte de Validación</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>📝 Reporte de Validación de Lenguaje</h1>
+  <div id="reporte"></div>
+
+  <script>
+    fetch('reporte.json')
+      .then(res => res.json())
+      .then(data => {
+        const div = document.getElementById('reporte');
+        div.innerHTML += `<h2>Errores de Ortografía</h2>`;
+        data.ortografia.forEach(e => {
+          div.innerHTML += `<p>${e.archivo} [línea ${e.linea}]: "${e.palabra}"</p>`;
+        });
+
+        div.innerHTML += `<h2>Nombres de Variables Problemáticos</h2>`;
+        data.nombres.forEach(n => {
+          div.innerHTML += `<p>${n.archivo} [línea ${n.linea}]: "${n.nombre}"</p>`;
+        });
+      });
+  </script>
+</body>
+</html>
